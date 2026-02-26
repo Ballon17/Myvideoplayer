@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ballon TV Player</title>
+    <!-- كود الـ SDK الخاص بك من الصورة -->
+    <script src='//libtl.com/sdk.js' data-zone='9047822' data-sdk='show_9047822'></script>
+    <style>
+        body { background-color: #0e1621; color: white; font-family: sans-serif; text-align: center; display: flex; flex-direction: column; justify-content: center; height: 100vh; margin: 0; }
+        .btn { background-color: #2481cc; color: white; padding: 15px 30px; border: none; border-radius: 10px; font-size: 18px; cursor: pointer; text-decoration: none; margin: 10px; }
+        .reward-box { border: 1px solid #2481cc; padding: 20px; margin: 20px; border-radius: 15px; }
+    </style>
+</head>
+<body>
+    <div class="reward-box">
+        <h2>مشاهدة القنوات المجانية 📺</h2>
+        <p>شاهد إعلان قصير لفتح رابط البث المباشر</p>
+        <!-- هذا الزر يشغل الإعلان الخاص بك -->
+        <button class="btn" onclick="showAd()">🚀 شاهد الإعلان وافتح البث</button>
+    </div>
+
+    <script>
+        function showAd() {
+            // تشغيل دالة الإعلان من SDK Monetag
+            show_9047822().then(() => {
+                // الكود الذي سيعمل بعد انتهاء الإعلان (توجيه للقناة)
+                alert("شكراً لك! سيتم توجيهك الآن للبث المباشر");
+                window.location.href = "https://www.aljazeera.net/live"; 
+            }).catch((e) => {
+                alert("يرجى مشاهدة الإعلان كاملاً لفتح القناة");
+            });
+        }
+    </script>
+</body>
+</html>
